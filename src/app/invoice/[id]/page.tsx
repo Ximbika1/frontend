@@ -3,7 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import SmartToyIcon from '@mui/icons-material/SmartToy'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import ClipLoader from 'react-spinners/ClipLoader'
@@ -16,16 +16,27 @@ const questionSchema = z.object({
 
 type QuestionFormData = z.infer<typeof questionSchema>
 
-export default function Invoice() {
+interface Params {
+  id: string
+}
+
+interface InvoicePageProps {
+  params: {
+    id: Params
+  }
+}
+
+export default function Invoice({ params }: InvoicePageProps) {
   const router = useRouter()
   const API_URL = process.env.NEXT_PUBLIC_API_URL
-  const searchParams = useSearchParams()
-  const invoiceId = searchParams.get('id')
+  //   const searchParams = useSearchParams()
+  //   const invoiceId = searchParams.get('id')
+  const { id: invoiceId } = params
+  console.log(invoiceId)
   const [loading, setLoading] = useState(false)
   const [document, setDocument] = useState({} as any)
   const [interactions, setInteractions] = useState([])
   const [disabled, setDisabled] = useState(true)
-
   const { handleSubmit, register } = useForm<QuestionFormData>({
     resolver: zodResolver(questionSchema),
   })

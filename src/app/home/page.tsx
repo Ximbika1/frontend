@@ -18,7 +18,7 @@ import {
 // biome-ignore lint/style/useImportType: <explanation>
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState, useState as useStateHook } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { z } from 'zod'
@@ -99,7 +99,7 @@ export default function HomePage() {
   }
 
   const handleQuestion = (id: number) => {
-    router.push(`/invoice?id=${id}`)
+    router.push(`/invoice/${id}`)
   }
 
   const handleDownload = async (id: number, name: string) => {
