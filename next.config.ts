@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   trailingSlash: true,
+  output: 'standalone',
   images: {
     domains: ['exemplo.com', 'images.unsplash.com'], // Domínios permitidos
   },
