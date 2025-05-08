@@ -29,10 +29,7 @@ interface InvoicePageProps {
 export default function Invoice({ params }: InvoicePageProps) {
   const router = useRouter()
   const API_URL = process.env.NEXT_PUBLIC_API_URL
-  //   const searchParams = useSearchParams()
-  //   const invoiceId = searchParams.get('id')
   const { id: invoiceId } = params
-  console.log(invoiceId)
   const [loading, setLoading] = useState(false)
   const [document, setDocument] = useState({} as any)
   const [interactions, setInteractions] = useState([])
