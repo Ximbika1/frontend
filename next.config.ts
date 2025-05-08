@@ -1,11 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   /* config options here */
+  reactStrictMode: true,
+  trailingSlash: true,
   images: {
     domains: ['exemplo.com', 'images.unsplash.com'], // Domínios permitidos
   },
-};
+}
 
-module.exports = nextConfig;
-export default nextConfig;
+module.exports = nextConfig
+export default nextConfig
