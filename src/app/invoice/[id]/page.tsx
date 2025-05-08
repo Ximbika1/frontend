@@ -16,13 +16,9 @@ const questionSchema = z.object({
 
 type QuestionFormData = z.infer<typeof questionSchema>
 
-interface Params {
-  id: string
-}
-
 interface InvoicePageProps {
   params: {
-    id: Params
+    id: string
   }
 }
 
