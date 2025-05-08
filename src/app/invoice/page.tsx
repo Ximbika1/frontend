@@ -36,7 +36,6 @@ export default function Invoice() {
       const currentTime = Date.now()
 
       if (currentTime > Number(tokenExpiration)) {
-        console.log('aqui')
         //Logout
         localStorage.removeItem('token')
         localStorage.removeItem('tokenExpiration')
